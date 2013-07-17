@@ -176,7 +176,7 @@ class DatabaseOperations(generic.DatabaseOperations):
         """
         cursor = self._get_connection().cursor()
         if self._has_setting('STORAGE_ENGINE') and self._get_setting('STORAGE_ENGINE'):
-            cursor.execute("SET storage_engine=%s;" % self._get_setting('STORAGE_ENGINE'))
+            cursor.execute("SET default_storage_engine=%s;" % self._get_setting('STORAGE_ENGINE'))
 
     def start_transaction(self):
         super(DatabaseOperations, self).start_transaction()
